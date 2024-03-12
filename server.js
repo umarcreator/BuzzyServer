@@ -6,7 +6,7 @@ const path = require('path')
 const dotenv = require('dotenv')
 dotenv.config()
 // mongoose.connect('mongodb://127.0.0.1:27017/buzzy')
-mongoose.connect('mongodb+srv://umarcreator:tu0ce0f0@cluster0.cpl0ubc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/buzzy')
+mongoose.connect(`${process.env.MONGO_URL}`)
 
 const db = mongoose.connection
 db.on('error', e => console.log(e))
